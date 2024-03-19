@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>leaflet/leaflet.css</file>
+        <file>leaflet/leaflet.js</file>
+        <file>leaflet/leaflet.rotatedMarker.js</file>
+        <!-- Diğer dosyalarınızı buraya ekleyin -->
+        <file>icons/blueplane.png</file>
+        <file>icons/blueboat.png</file>
+        <file>icons/redboat.png</file>
+        <file>icons/bluerover.png</file>
+        <file>icons/icon3.png</file>
+
+    </qresource>
+</RCC>

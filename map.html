@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>My Map</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="qrc:///leaflet/leaflet.css">
+        <script src="qrc:///leaflet/leaflet.js"></script>
+        <script src="qrc:///leaflet/leaflet.rotatedMarker.js"></script>
+
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+        <style>
+            #map {
+                height: 80%;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map" style="width: 100%; height: 100%;"></div>
+        <script>
+            
+            var mymap = L.map('map').setView([-35.36306456,149.16584543], 13);
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 19,
+            }).addTo(mymap);
+            
+    
+
+            var customIcon = L.icon({
+                iconUrl: 'qrc:///icons/icon3.png',
+                iconSize: [38, 40], 
+                iconAnchor: [19, 20],
+                popupAnchor: [-3, -76]
+            });
+
+            var marker = L.marker([-35.36306456,149.16584543], {icon: customIcon,rotationAngle: 45}).addTo(mymap);
+
+            function updateMarker(lat, lon,angle) {
+                marker.setLatLng([lat, lon]);
+                marker.setRotationAngle(angle);
+                
+            }
+        </script>
+    </body>
+</html>
