@@ -1,5 +1,8 @@
 bu repo pyqt5 web arayüzü ile html ve java script kullanılarak yapılan harita arayüzü örneğidir.
 
+![image](https://github.com/furkan-hub/python-uav-map/assets/72547366/61f190d1-187d-490c-b20c-a82fc62740d6)
+
+
 python ve pyqt5 kullanarak harita arayüzü yapmak her ne kadar mantıksız olsa da pyqt5 in webengine eklentisi ile bu bir sorun olmaktan çıkıyor 
 
 haritalar ile çalışırken karşımıza 2 tane kavram çıkar; Dinamik ve Statik haritalar statik haritalar üzerinde herhangi bir gerçek zamanlı güncelleme yapılmayan sabit haritalardır dinamik haritalar ise tam tersi sürekli canlı verileri ile kendisini güncelleyen haritalardır. Örnek olarak harita üzerinde dağların konumlarını gösteren bir uygulama statik bir haritadır çünkü dağlar sürekli yer değitirmezler fakat siz bir hava trafiğini harita üzerinde göstermek isterseniz size dinamik olarak harita da ki bütün araçların konumunu güncelleyen dinamik yapıda bir harita uygulaması gerekir.
@@ -18,6 +21,8 @@ python dili için geliştirilmiş bir arayüz oluşturma uygulamasıdır.
 Pyqt5 ile web uygulamalarını çalıştırmak için kullanılan bir eklentidir.
 
 -- Leaflet --
+![image](https://github.com/furkan-hub/python-uav-map/assets/72547366/08ff011c-2989-46db-b4ce-90ae5722bf23)
+
 
 leaflet kütüphanesi html, javascript tabanlı bir web harita geliştirme kütüphanesidir leaflet size oldukça fazla araç sunarak istediğiniz her türlü haritayı oluşturmanıza olanak tanır eğer istediğiniz görevi yerine getirecek bir fonksiyon yoksa merak etmeyin leflet kütüphanesinin topluluk desteği oldukça fazladır istediğiniz fonksiyonu yerine getiren bir eklenti muhakkak bulursunuz örnek olarak ben harita üzerin de ki iconları döndürmek için "leaflet.rotatedMarker.js" adında bir eklenti ekledim.
 
@@ -27,10 +32,11 @@ ilk olarak "map.html" adında leaflet kütüphanesini kullanarak oluşturulan we
 
 
 BU KıSıM ÇOK ÖNEMLI.!!!!!!!!!
+
 -- resource.py dosyası ---
 
 eğer qwebengine ile çalışıyorsanız pyqt5 güvenlik sebebi ile sizin local de ki javascript kütüphanelerinize erişemez bu yüzden indirdiğiniz js kütüphanelerini resource.qrc dosyasına dosya yolunu tanımlayıp dosya dizininde terminalde şu komutu
-
+```
 "pyrcc5 resources.qrc -o resources.py"
-
+```
 çalıştırıp bu dosyaları derleyip bir python dosyası haline getirmelisiniz. bu sayede main kodumuzda bu kütüphaneyi çağırıp html kodumuzda offline olarak js kütüphaneleri ile kullanabiliriz.
