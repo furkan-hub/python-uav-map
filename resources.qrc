@@ -1,3 +1,5 @@
+<!-- python da import edilecek js vs css kütüphaneleri -->
+
 <RCC>
     <qresource prefix="/">
         <file>leaflet/leaflet.css</file>

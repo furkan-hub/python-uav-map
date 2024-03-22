@@ -52,7 +52,6 @@ class MapWindow(QMainWindow):
         self.browser.page().runJavaScript(f"updateMarker({new_lat}, {new_lon},{angle})")
 
 if __name__ == '__main__':
-    sys.argv.append("--disable-web-security")
 
     app = QApplication(sys.argv)
     window = MapWindow()
