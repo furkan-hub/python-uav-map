@@ -32,6 +32,7 @@ ilk olarak "map.html" adında leaflet kütüphanesini kullanarak oluşturulan we
 
 
 BU KıSıM ÇOK ÖNEMLI.!!!!!!!!!
+
 -- resource.py dosyası ---
 
 eğer qwebengine ile çalışıyorsanız pyqt5 güvenlik sebebi ile sizin local de ki javascript kütüphanelerinize erişemez bu yüzden indirdiğiniz js kütüphanelerini resource.qrc dosyasına dosya yolunu tanımlayıp dosya dizininde terminalde şu komutu
