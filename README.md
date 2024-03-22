@@ -14,9 +14,6 @@ bu yüzden html,css java script tabanlı bir uygulamanın webengine kullanılara
 
 -- Pyqt5 --
 
-![image](https://github.com/furkan-hub/python-uav-map/assets/72547366/26e181a3-d3a0-4781-bebb-d7f817ca39a5)
-
-
 python dili için geliştirilmiş bir arayüz oluşturma uygulamasıdır. 
 
 -- QwebEngine --
