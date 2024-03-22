@@ -7,8 +7,12 @@ from dronekit import *
 import resources
 import math
 
-connection_string = "tcp:127.0.0.1:5762"
-vehicle = connect(connection_string, baud=57600, wait_ready=True,rate=50)
+
+sitl = False
+
+if sitl == True:
+    connection_string = "tcp:127.0.0.1:5762"
+    vehicle = connect(connection_string, baud=57600, wait_ready=True,rate=50)
 
 
 class MapWindow(QMainWindow):
@@ -42,14 +46,17 @@ class MapWindow(QMainWindow):
 
     @pyqtSlot()
     def update_marker(self):
-        # Rastgele bir konum üretelim, gerçek zamanlı güncelleneceğini varsayalım
-        new_lat = vehicle.location.global_frame.lat
-        new_lon = vehicle.location.global_frame.lon
-        angle = math.degrees(vehicle.attitude.yaw)
-        print(new_lat,new_lon,angle)
-        
-        # JavaScript fonksiyonunu çağırarak marker'ın konumunu güncelleyelim
-        self.browser.page().runJavaScript(f"updateMarker({new_lat}, {new_lon},{angle})")
+        if sitl == True:
+            # Rastgele bir konum üretelim, gerçek zamanlı güncelleneceğini varsayalım
+            new_lat = vehicle.location.global_frame.lat
+            new_lon = vehicle.location.global_frame.lon
+            angle = math.degrees(vehicle.attitude.yaw)
+            print(new_lat,new_lon,angle)
+            
+            # JavaScript fonksiyonunu çağırarak marker'ın konumunu güncelleyelim
+            self.browser.page().runJavaScript(f"updateMarker({new_lat}, {new_lon},{angle})")
+        else:
+            pass
 
 if __name__ == '__main__':
 
